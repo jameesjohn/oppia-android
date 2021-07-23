@@ -17,6 +17,6 @@ class LicenseItemViewModel(
   /** Starts [LicenseViewerActivity] upon clicking on an item of the license list. */
 //  fun clickOnLicenseItem() {
 //    val routeToLicenseTextListener = activity as RouteToLicenseTextListener
-//    routeToLicenseTextListener.onRouteToLicenseText(licenseText)
+//    routeToLicenseTextListener.onRouteToLicenseText()
 //  }
 }

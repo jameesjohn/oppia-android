@@ -28,7 +28,7 @@ class LicenseListFragmentPresenter(
     container: ViewGroup?,
     thirdPartyDependencyIndex: Int
   ): View? {
-//    val viewModel = getLicenseListViewModel(fragment, thirdPartyDependencyIndex)
+    val viewModel = getLicenseListViewModel(fragment, thirdPartyDependencyIndex)
 
     binding = LicenseListFragmentBinding.inflate(
       inflater,
@@ -41,10 +41,10 @@ class LicenseListFragmentPresenter(
       adapter = createRecyclerViewAdapter()
     }
 
-//    binding.let {
-//      it.lifecycleOwner = fragment
-//      it.viewModel = viewModel
-//    }
+    binding.let {
+      it.lifecycleOwner = fragment
+      it.viewModel = viewModel
+    }
     return binding.root
   }
 
@@ -58,8 +58,8 @@ class LicenseListFragmentPresenter(
       .build()
   }
 
-//  private fun getLicenseListViewModel(fragment: Fragment, thirdPartyDependencyIndex: Int):
-//    LicenseListViewModel {
-//    return LicenseListViewModel(fragment, thirdPartyDependencyIndex)
-//  }
+  private fun getLicenseListViewModel(fragment: Fragment, thirdPartyDependencyIndex: Int):
+    LicenseListViewModel {
+    return viewModelProvider.getForFragment(fragment, LicenseListViewModel::class.java)
+  }
 }

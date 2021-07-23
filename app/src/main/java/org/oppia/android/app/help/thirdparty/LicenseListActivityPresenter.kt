@@ -26,27 +26,27 @@ class LicenseListActivityPresenter @Inject constructor(
       lifecycleOwner = activity
     }
 
-    licenseListActivityToolbar = binding.thirdPartyDependencyLicensesActivityToolbar
+    licenseListActivityToolbar = binding.licenseListActivityToolbar
     activity.setSupportActionBar(licenseListActivityToolbar)
-    activity.supportActionBar!!.title = activity.getString(R.string.FAQs)
+    activity.supportActionBar!!.title = activity.getString(R.string.licenses)
     activity.supportActionBar!!.setDisplayShowHomeEnabled(true)
     activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-    binding.thirdPartyDependencyLicensesActivityToolbar.setNavigationOnClickListener {
+    binding.licenseListActivityToolbar.setNavigationOnClickListener {
       (activity as LicenseListActivity).finish()
     }
 
-//    if (getThirdPartyDependencyListFragment() == null) {
-//      activity.supportFragmentManager.beginTransaction().add(
-//        R.id.faq_list_fragment_placeholder,
-//        FAQListFragment()
-//      ).commitNow()
-//    }
+    if (getThirdPartyDependencyListFragment() == null) {
+      activity.supportFragmentManager.beginTransaction().add(
+        R.id.license_list_fragment_placeholder,
+        LicenseListFragment()
+      ).commitNow()
+    }
   }
 
-//  private fun getThirdPartyDependencyListFragment(): FAQListFragment? {
-//    return activity
-//      .supportFragmentManager
-//      .findFragmentById(R.id.faq_list_fragment_placeholder) as FAQListFragment?
-//  }
+  private fun getThirdPartyDependencyListFragment(): LicenseListFragment? {
+    return activity
+      .supportFragmentManager
+      .findFragmentById(R.id.license_list_fragment_placeholder) as LicenseListFragment?
+  }
 }
