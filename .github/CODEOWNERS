@@ -42,6 +42,8 @@ gradlew.bat @BenHenning
 /.gitsecret/ @BenHenning
 *.secret @BenHenning
 
+#Hi I'm James John James
+
 # CI configuration.
 /.github/actions/ @BenHenning
 /.github/workflows/ @BenHenning
